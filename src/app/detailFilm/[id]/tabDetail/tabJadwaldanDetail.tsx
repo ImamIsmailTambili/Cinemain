@@ -5,7 +5,7 @@ import { FilmProps } from './types';
 import TabDetail from './tabDetail';
 import TabJadwal from './tabJadwal/tabJadwal';
 
-export default function tabJadwaldanDetail({ film, session }: FilmProps) {
+export default function TabJadwaldanDetail({ film, session }: FilmProps) {
     const [tab, setTab] = useState("jadwal");
 
     return (

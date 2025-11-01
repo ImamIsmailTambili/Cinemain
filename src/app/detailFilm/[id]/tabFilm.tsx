@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Play } from 'lucide-react';
 
-const tabFilm = ({ film }: any) => {
+const TabFilm = ({ film }: any) => {
 
     return (
         <div className="mt-10 flex md:items-center items-start gap-5 ">
@@ -68,4 +68,4 @@ const tabFilm = ({ film }: any) => {
     )
 }
 
-export default tabFilm
+export default TabFilm

@@ -8,7 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover
 import { CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 
-const buatAkunForm = () => {
+const BuatAkunForm = () => {
     const router = useRouter()
     const { register, handleSubmit, control, formState: { errors } } = useForm<UserFormData>({
         resolver: zodResolver(formSchema),
@@ -158,4 +158,4 @@ const buatAkunForm = () => {
     )
 }
 
-export default buatAkunForm
+export default BuatAkunForm

@@ -4,7 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Calendar, Clapperboard, MapPin, CreditCard } from "lucide-react";
 
-const detailPesanan = ({ session }: any) => {
+const DetailPesanan = ({ session }: any) => {
     const searchParams = useSearchParams();
     const router = useRouter();
     const user = session?.user;
@@ -111,4 +111,4 @@ const detailPesanan = ({ session }: any) => {
     )
 }
 
-export default detailPesanan
+export default DetailPesanan

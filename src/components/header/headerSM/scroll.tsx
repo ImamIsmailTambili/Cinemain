@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const scroll = ({ children }: { children: React.ReactNode }) => {
+const Scroll = ({ children }: { children: React.ReactNode }) => {
     const [scrolled, setScrolled] = useState(false)
     const [lastScrolled, setlastScrolled] = useState(0)
 
@@ -27,4 +27,4 @@ const scroll = ({ children }: { children: React.ReactNode }) => {
     )
 }
 
-export default scroll
+export default Scroll

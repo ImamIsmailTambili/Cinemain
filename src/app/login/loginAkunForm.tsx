@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { userSchema, UserFormData } from "./userSchema";
 
-const loginAkunForm = () => {
+const LoginAkunForm = () => {
     const router = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm<UserFormData>({
         resolver: zodResolver(userSchema),
@@ -70,4 +70,4 @@ const loginAkunForm = () => {
     )
 }
 
-export default loginAkunForm
+export default LoginAkunForm

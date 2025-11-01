@@ -5,7 +5,7 @@ import ListKota from './listKota';
 import ListBioskop from './listBioskop';
 import TiketPopup from './tiketPopup';
 
-const tabJadwal = ({ film, session }: FilmProps) => {
+const TabJadwal = ({ film, session }: FilmProps) => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [selectedCity, setSelectedCity] = useState<string | null>(null);
     const [expandedCinemaId, setExpandedCinemaId] = useState<number | null>(null);
@@ -111,4 +111,4 @@ const tabJadwal = ({ film, session }: FilmProps) => {
     )
 }
 
-export default tabJadwal
+export default TabJadwal

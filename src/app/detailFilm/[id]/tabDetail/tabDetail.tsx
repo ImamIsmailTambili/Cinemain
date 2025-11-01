@@ -1,4 +1,4 @@
-const tabDetail = ({ film }: any) => {
+const TabDetail = ({ film }: any) => {
     return (
         <div className="mt-10 text-gray-700">
             <h2 className="text-xl font-semibold mb-2">Sinopsis</h2>
@@ -29,4 +29,4 @@ const tabDetail = ({ film }: any) => {
     )
 }
 
-export default tabDetail
+export default TabDetail
