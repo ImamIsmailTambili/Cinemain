@@ -1,7 +1,12 @@
 import Link from "next/link"
 import { Play } from 'lucide-react';
+import { Film } from "@prisma/client";
 
-const TabFilm = ({ film }: any) => {
+interface FilmProps {
+    film: Film
+}
+
+const TabFilm = ({ film }: FilmProps) => {
 
     return (
         <div className="mt-10 flex md:items-center items-start gap-5 ">
