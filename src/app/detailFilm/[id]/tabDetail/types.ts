@@ -1,3 +1,5 @@
+import { Session } from "next-auth"
+
 export interface Film {
     judul: string
     poster: string
@@ -45,5 +47,5 @@ export interface JamTayang {
 
 export interface FilmProps {
     film: Film | null;
-    session: any;
+    session: Session | null;
 }

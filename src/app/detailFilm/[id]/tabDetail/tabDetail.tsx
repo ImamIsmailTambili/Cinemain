@@ -1,4 +1,10 @@
-const TabDetail = ({ film }: any) => {
+import { Film } from "@prisma/client"
+
+interface TabDetailProps {
+    film: Film;
+}
+
+const TabDetail = ({ film }: TabDetailProps) => {
     return (
         <div className="mt-10 text-gray-700">
             <h2 className="text-xl font-semibold mb-2">Sinopsis</h2>
