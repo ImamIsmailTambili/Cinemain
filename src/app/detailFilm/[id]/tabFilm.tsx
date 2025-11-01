@@ -3,7 +3,7 @@ import { Play } from 'lucide-react';
 import { Film } from "@prisma/client";
 
 interface FilmProps {
-    film: Film
+    film: Film | null
 }
 
 const TabFilm = ({ film }: FilmProps) => {

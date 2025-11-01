@@ -1,7 +1,7 @@
-import { Film } from "@prisma/client"
+import { Film } from "./types"
 
 interface TabDetailProps {
-    film: Film;
+    film: Film | null
 }
 
 const TabDetail = ({ film }: TabDetailProps) => {

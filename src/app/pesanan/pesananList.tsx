@@ -9,7 +9,7 @@ type PesananType = {
     jamTayang: {
         jam: string;
         tanggalTayang: {
-            tanggal: string;
+            tanggal: Date;
             filmdiCinema: {
                 film: {
                     poster: string;
