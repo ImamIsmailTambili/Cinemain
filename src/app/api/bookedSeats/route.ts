@@ -21,7 +21,7 @@ export async function GET(req: Request) {
         });
 
         // Ambil hanya nomor kursinya
-        const bookedSeats = kursiTerpesan.map((k: typeof prisma) => k.masterKursi.nomorKursi);
+        const bookedSeats = kursiTerpesan.map((k) => k.masterKursi.nomorKursi);
 
         return NextResponse.json({ bookedSeats });
     } catch (error) {
