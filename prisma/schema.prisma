@@ -1,0 +1,106 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  nama         String
+  telepon      String    @unique
+  email        String    @unique
+  gender       String
+  tanggalLahir DateTime? @db.Date
+  pin          String
+  createdAt    DateTime  @default(now())
+  pesan        Pesan[]
+}
+
+model Daerah {
+  id     Int      @id @default(autoincrement())
+  nama   String
+  cinema Cinema[]
+}
+
+model Cinema {
+  id         Int            @id @default(autoincrement())
+  nama       String
+  daerahId   Int
+  daerah     Daerah         @relation(fields: [daerahId], references: [id])
+  filmTayang FilmDiCinema[]
+}
+
+model Film {
+  id         Int            @id @default(autoincrement())
+  judul      String
+  genre      String
+  sinopsis   String
+  produser   String
+  sutradara  String
+  production String
+  pemeran    String
+  poster     String
+  trailer    String
+  penulis    String
+  tayangDi   FilmDiCinema[]
+}
+
+model FilmDiCinema {
+  id            Int             @id @default(autoincrement())
+  filmId        Int
+  cinemaId      Int
+  harga         Int
+  Cinema        Cinema          @relation(fields: [cinemaId], references: [id])
+  film          Film            @relation(fields: [filmId], references: [id])
+  TanggalTayang TanggalTayang[]
+
+  @@unique([filmId, cinemaId])
+}
+
+model TanggalTayang {
+  id             Int          @id @default(autoincrement())
+  tanggal        DateTime     @db.Date
+  filmDiCinemaId Int
+  jam            JamTayang[]
+  filmdiCinema   FilmDiCinema @relation(fields: [filmDiCinemaId], references: [id])
+}
+
+model JamTayang {
+  id              Int             @id @default(autoincrement())
+  jam             String
+  tanggalTayangId Int
+  tanggalTayang   TanggalTayang   @relation(fields: [tanggalTayangId], references: [id])
+  kursiTerpesan   KursiTerpesan[]
+  pesan           Pesan[]
+}
+
+model MasterKursi {
+  id            Int             @id @default(autoincrement())
+  nomorKursi    String          @unique
+  kursiTerpesan KursiTerpesan[]
+}
+
+model KursiTerpesan {
+  id            Int         @id @default(autoincrement())
+  jamTayangId   Int
+  masterKursiId Int
+  jamTayang     JamTayang   @relation(fields: [jamTayangId], references: [id])
+  masterKursi   MasterKursi @relation(fields: [masterKursiId], references: [id])
+  Pesan         Pesan?
+
+  @@unique([jamTayangId, masterKursiId])
+}
+
+model Pesan {
+  id              Int           @id @default(autoincrement())
+  userId          Int
+  jamTayangId     Int
+  createdAt       DateTime      @default(now())
+  kursiTerpesanId Int           @unique
+  jamTayang       JamTayang     @relation(fields: [jamTayangId], references: [id])
+  kursiTerpesan   KursiTerpesan @relation(fields: [kursiTerpesanId], references: [id])
+  user            User          @relation(fields: [userId], references: [id])
+}
