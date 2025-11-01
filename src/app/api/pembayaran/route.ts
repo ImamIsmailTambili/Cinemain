@@ -47,7 +47,7 @@ export async function POST(req: Request) {
         }
 
         // Simpan ke database (transaksi biar atomic)
-        const result = await prisma.$transaction(async (tx: typeof prisma) => {
+        const result = await prisma.$transaction(async (tx) => {
             const createdRecords = [];
 
             for (const kursi of masterKursi) {
