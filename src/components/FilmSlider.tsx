@@ -49,7 +49,7 @@ export default function FilmSlider({ films }: FilmSliderProps) {
             )}
 
             {/* Gambar ukuran MD keatas */}
-            <div className="sm:hidden md:flex gap-3">
+            <div className="sm:hidden flex gap-3">
                 {visibleFilms.map((film) => (
                     <Link key={film.id} href={`/detailFilm/${film.id}`}>
                         <img
@@ -62,7 +62,7 @@ export default function FilmSlider({ films }: FilmSliderProps) {
             </div>
 
             {/* Gambar ukuran SM */}
-            <div className="md:hidden sm:flex mx-auto gap-2">
+            <div className="md:hidden flex mx-auto gap-2">
                 {visibleFilmsSM.map((film) => (
                     <Link key={film.id} href={`/detailFilm/${film.id}`}>
                         <img
