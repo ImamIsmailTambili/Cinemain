@@ -40,7 +40,7 @@ export default function FilmSlider({ films }: FilmSliderProps) {
     }
 
     return (
-        <div className="flex items-center lg:gap-5 md:gap-3 gap-1 w-full mt-10 lg:px-15 px-5 group">
+        <div className="flex items-center lg:gap-5 md:gap-3 gap-1 w-full mt-10 lg:px-30 px-5 group">
             {/* Tombol kiri */}
             {films.length > perPage && (
                 <div className=" bg-blue-950 rounded-full opacity-0 group-hover:opacity-100">
