@@ -49,7 +49,7 @@ export default function FilmSlider({ films }: FilmSliderProps) {
             )}
 
             {/* Gambar ukuran MD keatas */}
-            <div className="hidden md:flex gap-3">
+            <div className="sm:hidden md:flex gap-3">
                 {visibleFilms.map((film) => (
                     <Link key={film.id} href={`/detailFilm/${film.id}`}>
                         <img
