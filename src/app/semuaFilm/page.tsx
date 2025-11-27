@@ -17,8 +17,7 @@ const page = async () => {
             <div className="grid lg:grid-cols-4 grid-cols-2 md:gap-5 gap-2">
                 {films.map((film: typeof films[number]) => (
                     <Link key={film.id} href={`/detailFilm/${film.id}`} className="flex flex-col">
-                        <img src={film.poster} alt={film.judul} key={film.id} className="lg:h-100 md:h-130 h-100 rounded-md" />
-                        <p className="font-semibold text-sm">{film.judul}</p>
+                        <img src={film.poster} alt={film.judul} key={film.id} className="md:h-130 h-100 rounded-md" />
                     </Link>
                 ))}
 
