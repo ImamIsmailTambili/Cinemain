@@ -55,14 +55,14 @@ export default function FilmSlider({ films }: FilmSliderProps) {
                         <img
                             src={film.poster}
                             alt={film.judul}
-                            className="rounded-md hover:scale-105 h-96 object-cover"
+                            className="rounded-md hover:scale-105 h-130 object-cover"
                         />
                     </Link>
                 ))}
             </div>
 
             {/* Gambar ukuran SM */}
-            <div className="md:hidden flex mx-auto gap-2">
+            <div className="md:hidden sm:flex mx-auto gap-2">
                 {visibleFilmsSM.map((film) => (
                     <Link key={film.id} href={`/detailFilm/${film.id}`}>
                         <img
